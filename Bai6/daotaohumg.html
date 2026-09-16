@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đạo tạo HUMG</title>
+       <style>
+        body{
+            margin: 0;
+        }
+        .danh-sach-muc{
+            padding: 0;
+            margin: 0;
+        }
+        .danh-muc{
+            background-color: #198cf0;
+        }
+        .lien-ket{
+            color: white;
+            /* bo gach chan the a */
+            text-decoration: none;
+        }
+        .danh-sach-muc{
+            /* bo dau cham o danh sach khi dung ul,li */
+            list-style: none;
+            display: flex;
+            /* gap khoang cach cac doi tuong o trong */
+            gap: 20px;
+        }
+        .trai{
+            width: 20%;
+            height: 100vh;
+            /* tao duong vien dung border 
+            3 tham so: do day, kieu vien, mau sac */
+            border-right: 1px solid #198cf0;
+        }
+        .phai{
+            width: 80%;
+        }
+        main{
+            display: flex;
+        }
+        .khoi-dang-nhap{
+            width: 100%;
+            height: 100px;
+        }
+        form{
+            width: 80%;
+            margin: 10px auto;
+        }
+        .khoi-thong-tin{
+            width: 100%;
+        }
+        .khoi-mat-khau{
+            width: 100%;
+        }
+        .quen-mat-khau{
+            display: flex;
+            justify-content: flex-end;
+        }
+        p{
+            margin: 0;
+        }
+        input{
+            width: 100%;
+            padding: 5px 0;
+            border-radius: 5px;
+        }
+        button{
+            width: 100%;
+            padding: 5px 0;
+            border-radius: 5px;
+        }
+        .login{
+            margin-bottom: 10px;
+        }
+        .tin{
+            width:95%;
+            height: 100px;
+            margin: 20px auto;
+            border: 1px solid #198cf0;
+            border-radius: 10px;
+        }
+        .chuc-nang{
+            width: 95%;
+            margin: 5px auto;
+            border: 1px solid #198cf0;
+            display: flex;
+            justify-content: space-beetween;
+        }
+        </style>
+</head>
+<body>
+    <!-- Danh mục -->
+  <nav class="danh-muc">
+    <ul class="danh-sach-muc">
+      <li class="muc"><a href="#" class="lien-ket">Thực tập đồ án</a></li>
+      <li class="muc"><a href="#" class="lien-ket">Bộ phận một cửa</a></li>
+      <li class="muc"><a href="#" class="lien-ket">Một cửa online</a></li>
+      <li class="muc"><a href="#" class="lien-ket">E-Mail HUMG</a></li>
+    </ul>
+  </nav>
+    <div class="trai">
+                <div class="khoi-dang-nhap">
+                    <form action="">
+                        <div class="khoi-thong-tin">
+                            <p>Taì khoản</p>
+                            <input type="text" name="tai-khoan">
+                        </div>
+                        <div class="khoi-mat-khau">
+                            <p>Mật khẩu</p>
+                            <input type="password" name="mat-khau">
+                        </div>
+                        <div class="quen-mat-khau">
+                            <a class="quen-mat-khau-lien-ket">Quên mật khẩu?</a>
+                        </div>
+                        <div>
+                            <button class="login">Đăng nhập</button>
+                            <button class="login">Đăng nhập với Microsoft Office</button>
+                        </div>
+        </form>
+                </div>
+            </div>
+            <div class="phai">
+                <div class="danh-sach-tin">
+                    <div class="tin">
+                        <div class="chuc-nang">
+                            <div class="tieu-de">Tin tức</div>
+                            <div class="xem-tiep">Xem tiếp</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+</body>
+</html>
