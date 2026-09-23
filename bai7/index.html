@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- internal javaScript -->
+     <script>
+        //in ra màn hình
+        document.writeln("Hello Binh <br>")
+        <!-- khai báo biến -->
+    var name = "An Binh <br>";
+
+    document.writeln(name);
+
+    name = "Binh <br>"
+
+    document.writeln(name);
+
+    var year = 2026;
+
+    document.writeln(year);
+
+    //Phep toan
+    //cong+
+    var soThuNhat = 1;
+    var soThuHai = 19;
+    var ketQua = 0; 
+    document.write("<br> Ket qua +: ")
+    ketQua = soThuNhat + soThuHai;
+    document.write(ketQua)
+
+    var soThuNhat = 1;
+    var soThuHai = 19;
+    var ketQua = 0; 
+    document.write("<br> Ket qua *: ")
+    ketQua = soThuNhat * soThuHai;
+    document.write(ketQua)
+
+    var soThuNhat = 1;
+    var soThuHai = 19;
+    var ketQua = 0;
+    document.write("<br> Ket qua %: ")
+    ketQua = soThuNhat % soThuHai;
+    document.write(ketQua)
+
+    //++
+    document.writeln("<br>");
+    document.writeln(++soThuNhat);
+
+    soThuNhat += soThuHai;
+    document.writeln(soThuNhat);
+
+    soThuNhat -= soThuHai;
+    document.writeln(soThuNhat);
+
+    var ho = "Nguyen";
+    var ten = "Binh";
+    document.writeln("<br>" + ho + " "+ ten);
+    document.writeln("<br>");
+    document.writeln(ho.length);
+    
+    //Kiem tra kieu du lieu cua bien
+    document.writeln(typeof(ho));
+    document.writeln("<br>");
+
+    //
+    var hoVaTen="Nguyen An Binh";
+    document.writeln(hoVaTen.indexOf("A"));
+    document.writeln("<br>");
+    document.writeln(hoVaTen.includes("B"));
+    document.writeln("<br>");
+    document.writeln(hoVaTen.startsWith("Pham"));
+    document.writeln("<br>");
+    document.write(hoVaTen.replace("Nguyen","Dang"))
+    document.writeln("<br>");
+    document.write(hoVaTen.toUpperCase())
+    document.writeln("<br>");
+    document.write(hoVaTen.toLowerCase())
+
+
+
+
+     </script>
+    <script src="script.js"></script>
+    
+</body>
+</html>
