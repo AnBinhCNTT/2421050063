@@ -32,7 +32,7 @@
         document.write(ngayNay);
 
         document.writeln("<br>");
-        document.writeln("Hom nay la: " + thuNay + "Thang: "  + thangNay + "Nam: " + namNay);
+        document.writeln("Hom nay la thu: " + thuNay + "Ngay: " + ngayNay + "Thang: "  + thangNay + "Nam: " + namNay);
 
         var mangSo = [1,2,3,4,5];
         document.writeln("<br>");
@@ -49,45 +49,60 @@
         var d = mang.concat(mangSo, mangTen);
         document.writeln("<br>");
         document.write(d.join("."));
+        // join đảo ngược lại
         // document.write(d.pop()) khai báo phần tử cuối
         // document.write(d.push("An")) Thêm phần tử An
 
         document.write(mangSo.reverse());
         
         //Object
-        var thongTinSinhVien = {
+        var thongTinSinhVien1 = {
             ten: "Nguyen An Binh",
             namSinh: 2006,
             queQuan: {
-                thanhPho: "Nam Định",
-                huyen: "Xuân Trường"
+                thanhPho: 'Nam Định',
+                huyen: 'Xuân Trường'
             }
         };
         document.writeln("<br>");
-        document.writeln(thongTinSinhVien.queQuan.thanhPho);
-        tuoi = namNay - thongTinSinhVien.namSinh;
-        document.writeln(thongTinSinhVien.namSinh);
-        thongTinSinhVien.tuoi = tuoi;
-        document.writeln(thongTinSinhVien.tuoi);
+        document.writeln(thongTinSinhVien1.queQuan.thanhPho);
+        tuoi = namNay - thongTinSinhVien1.namSinh;
+        document.writeln(thongTinSinhVien1.namSinh);
+        thongTinSinhVien1.tuoi = tuoi;
+        document.writeln(thongTinSinhVien1.tuoi);
         // console.log(thongTinSinhVien)
         // boolean: true nam / false nữ
-        thongTinSinhVien.gioiTinh = true;
+        thongTinSinhVien1.gioiTinh = true;
 
-        var thongTinSinhVien = [
+        var danhSach = [
             {
-            ten: "Nguyen Yen",
-            namSinh: 2006,
-            },
-            {
-                ten:"Nguyen An",
+                ten: 'Nguyen An Yen',
                 namSinh: 2006,
+                queQuan: {
+                thanhPho: "Nam Định",
+                huyen: "Xuân Trường"
             }
-        ]
+            }, 
+            {
+                ten: 'Nguyen Binh An',
+                namSinh: 2006,
+                queQuan: {
+                thanhPho: 'Nam Định',
+                huyen: 'Xuân Trường'
+            }
+            }
+        ];
+
+
+// so sánh bằng
+//=== so sánh cả giá trị và kiểu dữ liệu
 
         var so1 = 1;
         var so2 = 19;
         document.writeln("<br>");
-        document.writeln(so1 == so2);
+        document.writeln(so1 !== so2);
+        //!= khác
+        //!=== khác nghiêm ngặt
         // === so sánh cả giá trị và kiểu giữ liệu
 
 
@@ -97,14 +112,90 @@
             document.writeln("Đi học");
         }
 
-        var so = 5;
-        //Kiểm tra chẵn lẻ
-        if (so % 2 ==0){
-            document.write(so + "số chẵn");
+        var so = "200000000000000000000000001";
+        var soDai = so.length;
+        var soCuoiCung = so[soDai - 1];
+        document.writeln("<br>");
+        document.writeln(soCuoiCung);
+
+
+        // var so = 5;
+        // //Kiểm tra chẵn lẻ
+        // if (so % 2 ==0){
+        //     document.write(so + "số chẵn");
+        // }else{
+        //     document.write(so + "số lẻ");
+
+        // }
+
+        // swtich case
+        var d = new Date();
+        var theDay = d.getDay();
+        switch (theDay){
+            case 5:
+                document.write("Finally Friday");
+                break;
+            case 6:
+                document.write("Super Saturdday");
+                break;
+            case 0:ddocument.write("sleep sunday");
+                break;
+            default:
+                document.write("I'am looking forward to this weekend!");
+        }
+
+        for (var index = 1; index <= 10; index++){
+            document.writeln("<br>");
+            document.writeln("Binh Sorry " + index);
+        }
+//mang
+        for (var i = 0; i < mang.length; i++) {
+            if (isNaN(mang[i]) == true) {
+            document.writeln("<br>");
+            document.writeln("xin chao: " + mang[i]);
         }else{
-            document.write(so + "số lẻ");
 
         }
+    }
+
+    // while
+    i = 0;
+     while (i<=10){
+        document.write("the number is " +i);
+        document.write("<br />");
+        i = i+1;
+     }
+     //do while
+     var j = 0;
+     do {
+        document.write("The number is " + j);
+        document.write("<br />");
+        j = j + 1;
+     } while (j <= 10 )
+
+     //popup boxes
+    //  alert("Xinnnnnnnnnnnnnnnnnnnnnnnnnnn chaooooooooooooooooooooooo");
+
+
+    // // confirm
+    // var r = confirm("Press a button")
+    // if ( r == true){
+    //     document.write("You pressed OK!")
+    // }
+    // else{
+    //     document.write("You pressed Cannel!")
+    // }
+
+    // prompt 
+    var r = prompt ("Nhập họ tên ","Nhập tên ở đây");
+    document.write(r);
+
+
+
+
+
+    
+
 
 
     </script> 
