@@ -6,6 +6,18 @@
     <title>Document</title>
 </head>
 <body>
+    <div>
+        Nhập điểm A: <input id = "diemA" type="number">
+     </div>
+     <div>
+        Nhập điểm B: <input id = "diemB" type="number">
+     </div>
+     <div>
+        Nhập điểm C: <input id = "diemC" type="number">
+     </div>
+     <div>
+      <button onclick="tinhDiemChu()">Tính điểm</button>
+     </div>
     <script>
         //function
         function sayHello(){
@@ -33,15 +45,55 @@
     }
 }
 
-var a = prompt("Nhập giá trị thứ nhất:");
-var b = prompt("Nhập giá trị thứ hai:");
-
-tinhTong(a+b);
+var A = Number(prompt("Nhập giá trị thứ nhất:",""));
+var B = Number(prompt("Nhập giá trị thứ hai:",""));
+tinhTong(A,B);
 
 //BVN2
 //Viết hàm tính điểm chữ dựa trên 3 đầu điểm (A,B,C)
 // tong = a*0.6 + b+0.6 c*0.1 => điểm chữ
+// Hàm tính điểm trung bình và quy đổi ra điểm chữ
+document.writeln("<br>")
+function tinhDiemChu (a,b,c) {
+    var a = document.getElementById("diemA").value;
+    var b = document.getElementById("diemB").value;
+    var c = document.getElementById("diemC").value;
+    var tong = a * 0.6 + b * 0.3 + c * 0.1;
+    var diemChu = "";
 
+    if (tong >= 9) {
+        diemChu = "A+";
+    } else if (tong >= 8.5) {
+        diemChu = "A";
+    } else if (tong >= 8) {
+        diemChu = "B+";
+    } else if (tong >= 7) {
+        diemChu = "B";
+    } else if (tong >= 6) {
+        diemChu = "C+";
+    } else if (tong >= 5.0) {
+        diemChu = "D+";
+    } else if (tong >= 4.0) {
+        diemChu = "D";
+    } else {
+        diemChu = "F";
+    }
+
+    document.writeln("Điểm tổng kết: " + tong + "<br>");
+    document.writeln("Điểm chữ: " + diemChu + "<br>");
+}
+
+// Nhập dữ liệu từ bàn phím
+var a = Number(prompt("Nhập điểm A (Cuối kỳ):", "0"));
+var b = Number(prompt("Nhập điểm B (Giữa kỳ):", "0"));
+var c = Number(prompt("Nhập điểm C (Chuyên cần):", "0"));
+
+// Kiểm tra tính hợp lệ trước khi gọi hàm
+if (!isNaN(a) && !isNaN(b) && !isNaN(c)) {
+    tinhDiemChu(a, b, c);
+} else {
+    document.writeln("Vui lòng nhập điểm là số hợp lệ!");
+}
     </script>
 </body>
 </html>

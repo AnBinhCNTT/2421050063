@@ -109,14 +109,15 @@
         if(thuNay >6 ){
             document.writeln("Cuối tuần");
         }else{
-            document.writeln("Đi học");
+            document.writeln("Đi học");  
         }
 
-        var so = "200000000000000000000000001";
-        var soDai = so.length;
-        var soCuoiCung = so[soDai - 1];
-        document.writeln("<br>");
-        document.writeln(soCuoiCung);
+       var so = "200000000000000000000000001";
+       var soDai = so.length; // Độ dài chuỗi là 27
+       var soCuoiCung = so[soDai - 1]; // Lấy ký tự tại vị trí index 26
+       document.writeln("<br>");
+       document.writeln(soCuoiCung);
+
 
 
         // var so = 5;
@@ -131,6 +132,7 @@
         // swtich case
         var d = new Date();
         var theDay = d.getDay();
+        // chạy từ thứ 2 đến chủ nhật, 0 là chủ nhật,1 là thứ 2....
         switch (theDay){
             case 5:
                 document.write("Finally Friday");
@@ -138,7 +140,7 @@
             case 6:
                 document.write("Super Saturdday");
                 break;
-            case 0:ddocument.write("sleep sunday");
+            case 0:document.write("sleep sunday");
                 break;
             default:
                 document.write("I'am looking forward to this weekend!");
@@ -162,39 +164,33 @@
     i = 0;
      while (i<=10){
         document.write("the number is " +i);
-        document.write("<br />");
+        document.write("<br/>");
         i = i+1;
      }
      //do while
      var j = 0;
      do {
         document.write("The number is " + j);
-        document.write("<br />");
+        document.write("<br/>");
         j = j + 1;
      } while (j <= 10 )
 
      //popup boxes
-    //  alert("Xinnnnnnnnnnnnnnnnnnnnnnnnnnn chaooooooooooooooooooooooo");
+     //alert("Xinnnnnnnnnnnnnnnnnnnnnnnnnnn chaooooooooooooooooooooooo");
 
 
     // // confirm
-    // var r = confirm("Press a button")
-    // if ( r == true){
-    //     document.write("You pressed OK!")
-    // }
-    // else{
-    //     document.write("You pressed Cannel!")
-    // }
+     var r = confirm("Press a button")
+     if ( r == true){
+         document.write("You pressed OK!")
+     }
+     else{
+         document.write("You pressed Cannel!")
+     }
 
     // prompt 
-    var r = prompt ("Nhập họ tên ","Nhập tên ở đây");
-    document.write(r);
-
-
-
-
-
-    
+    // var r = prompt ("Nhập họ tên ","Nhập tên ở đây");
+    // document.write(r);
 
 
 

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        Nhập điểm A: <input id = "diemA" type="number">
+     </div>
+     <div>
+        Nhập điểm B: <input id = "diemB" type="number">
+     </div>
+     <div>
+        Nhập điểm C: <input id = "diemC" type="number">
+     </div>
+     <div>
+      <button onclick="tinhDiem()">Tính điểm</button>
+     </div>
+     <div>
+      kết quả: <input id ="ketqua" type="text">
+     </div>
+     <div>
+    Nhập năm sinh: <input id="namSinh" type="number">
+  </div>
+  <div>
+    <button onclick="hienThiTuoi()">Tính tuổi</button>
+  </div>
+  <div>
+    Kết quả: <input id="ketquatinh" type="text" >
+  </div>
+    <script>
+      function tinhDiem() {
+      var a = parseFloat(document.getElementById("diemA").value);
+      var b = parseFloat(document.getElementById("diemB").value);
+      var c = parseFloat(document.getElementById("diemC").value);
+       tinhDiemChu(a,b,c);
+
+       document.getElementById("ketqua").value = tinhDiemChu(a,b,c);
+      }
+      function tinhDiemChu(a,b,c){
+      var tong = a * 0.6 + b * 0.3 + c * 0.1;
+      var diemChu = "";
+
+      if (tong >= 9.0) {
+        diemChu = "A+";
+      } else if (tong >= 8.5) {
+        diemChu = "A";
+      } else if (tong >= 8.0) {
+        diemChu = "B+";
+      } else if (tong >= 7.0) {
+        diemChu = "B";
+      } else if (tong >= 6.5) {
+        diemChu = "C+";
+      } else if (tong >= 5.5) {
+        diemChu = "C";
+      } else if (tong >= 5.0) {
+        diemChu = "D+";
+      } else if (tong >= 4.0) {
+        diemChu = "D";
+      } else {
+        diemChu = "F";
+      }
+      return "Tổng: " + tong + " - Điểm chữ: " + diemChu;
+}
+function hienThiTuoi() {
+    var namSinh = parseInt(document.getElementById("namSinh").value);
+    var namHienTai = new Date().getFullYear();
+    var tuoi = namHienTai - namSinh;
+    document.getElementById("ketquatinh").value = + tuoi + "tuổi";
+    }
+
+     </script>
+    
+</body>
+</html>
