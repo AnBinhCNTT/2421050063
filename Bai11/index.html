@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>23/10/2026</title>
+    <style>
+        .img{
+            width: 20%;
+            height: auto;
+        }
+        .khung{
+            text-align: center;
+        }
+        .chuc-nang{
+             text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="khung">
+        <div>
+            <h1 class="che-do">Chế độ sáng</h1>
+            <img class="img" src ="mattroi.png">
+            <div class="chuc-nang"><button onclick="doiCheDo()">Đổi chế độ</button></div>
+        </div>
+    </div>
+
+<script>
+    var cheDo = true;
+    // cheDo (boolean: true sang/ false tối)
+    function doiCheDo() {
+            if (cheDo) {
+                // Chuyển sang Chế độ tối
+                document.getElementsByTagName("body")[0].style.backgroundColor = "black";
+                document.getElementsByClassName("che-do")[0].style.color = "white";
+                document.getElementsByClassName("che-do")[0].innerHTML = "Chế độ tối";
+                document.getElementsByTagName("img")[0].src = "mattrang.png";
+                cheDo = false;
+            } else {
+                // Quay lại Chế độ sáng
+                document.getElementsByTagName("body")[0].style.backgroundColor = "white";
+                document.getElementsByClassName("che-do")[0].style.color = "black";
+                document.getElementsByClassName("che-do")[0].innerHTML = "Chế độ sáng";
+                document.getElementsByTagName("img")[0].src = "mattroi.png";
+                cheDo = true;
+            }
+        }
+</script>
+</body>
+</html>

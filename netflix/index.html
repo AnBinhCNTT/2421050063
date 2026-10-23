@@ -56,8 +56,8 @@
       .banner-anh{
         width: 100%;
         boder-radius: 20px;
-        display: block;
-        height: 100%
+        height: 500px;
+        
     }
     .danh-sach-the-loai{
         width: 95%;
@@ -111,9 +111,15 @@
   </div>
 </header>
 <main>
-    <div class="banner">
+    <div onclick="xemTrailer()" class="banner">
         <img class="banner-anh" src="../Picture/anh14.jpg" alt="">
     </div>
+    <!-- Trailer -->
+    <div style="display: none;" class="banner">
+        <iframe class="banner-anh" src="https://www.youtube.com/embed/8IemgUhk0SI?si=uzyDuYtzvTY35jpX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+    </div>
+</div>
     <div class="danh-sach-the-loai">
         <div class="the-loai">
             <div class="ten-the-loai">
@@ -176,6 +182,14 @@
                 </div>
 </div>
 </div>
+<script>
+    function xemTrailer(){
+        //ẩn banner đi
+        document.getElementsByClassName("banner")[0].style ="display:none";
+        //hiểm thị trailer lên
+        document.getElementsByClassName("banner")[1].style ="display:flex";
+    }
+</script>
 </main>
 </body>
 </html>

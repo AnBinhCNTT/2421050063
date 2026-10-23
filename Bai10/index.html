@@ -17,18 +17,33 @@
      </div>
      <div>
       <button onclick="tinhDiem()">Tính điểm</button>
-     </div>
-     <div>
-      kết quả: <input id ="ketqua" type="text">
+      <input id ="ketqua" type="text">
      </div>
      <div>
     Nhập năm sinh: <input id="namSinh" type="number">
   </div>
   <div>
     <button onclick="hienThiTuoi()">Tính tuổi</button>
+    <input id="ketquatinh" type="text" >
+  </div>
+    Số lượng: <input id="soLuong" type="number">
   </div>
   <div>
-    Kết quả: <input id="ketquatinh" type="text" >
+    Giá Tiền: <input id="giaTien" type="number">
+  </div>
+  <div>
+    <button onclick="tinhTien()">Tổng tiền</button>
+    <input id="tong" type="text" >
+  </div>
+  <div>
+    Cân nặng: <input id ="canNang" type="text">
+  </div>
+  <div>
+    Chiều cao: <input id ="chieuCao" type="number">
+  </div>
+  <div>
+    <button onclick="tinhBMI()"> BMI </button>
+    <input id="kqBMI" type="type">
   </div>
     <script>
       function tinhDiem() {
@@ -70,6 +85,29 @@ function hienThiTuoi() {
     var tuoi = namHienTai - namSinh;
     document.getElementById("ketquatinh").value = + tuoi + "tuổi";
     }
+function tinhTien(){
+  var soLuong = parseInt(document.getElementById("soLuong").value);
+  var giaTien = parseInt(document.getElementById("giaTien").value);
+  var tong = soLuong * giaTien;
+  document.getElementById("tong").value = tong + "VND" ;
+}
+function tinhBMI(){
+  var canNang = parseFloat(document.getElementById("canNang").value);
+  var chieuCao = parseFloat(document.getElementById("chieuCao").value);
+  var kqBMI = canNang / (chieuCao*chieuCao);
+  var phanLoai =""
+
+  if (kqBMI  <18.5 ){
+    phanLoai="gầy";
+  }
+  else if (kqBMI <23 ){
+    phanLoai = "Bình Thường";
+  }
+    else if (kqBMI <25){
+    phanLoai="béo phì";
+  }
+  document.getElementById("kqBMI").value = "BMI: " + kqBMI + phanLoai ;
+}
 
      </script>
     
