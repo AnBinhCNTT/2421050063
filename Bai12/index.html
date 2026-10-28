@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chua bai netflix</title>
+</head>
+<style>
+    .video{
+        width: 50%;
+        height: 500px;
+        margin: auto;
+        display:block;
+        background-color: antiquewhite;
+
+    }
+    .danh-sach{
+        width: 80%;
+        display: flex;
+        margin: 50px auto;
+        justify-content: space-between;
+    }
+    .anh{
+        width:24%;
+        height: 150px;
+        object-fit: cover;
+        img{
+        width:100%;
+        height:100%;
+
+    }
+    }
+</style>
+<body>
+    <div>
+    <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/0rigHDn68qQ?si=5NTBYGMwWQnXQpqe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <h3 class="ten" style="text-align: center;">Doraemon và Những người bạn</h3>
+    </div>
+    <div class ="danh-sach">
+        <div class="anh" onclick="chieuVideo(1)">
+            <img src="../Picture/anh31.png" alt="">
+            <p>Messi vô địch woldcub và làm GOAT</p>
+        </div>
+        <div class="anh" onclick="chieuVideo(2)">
+            <img src="../Picture/anh32.png" alt="">
+            <p>Barsa và Messi vô địch c1</p>
+        </div>
+        <div class="anh" onclick="chieuVideo(3)">
+            <img src="../Picture/anh33.png" alt="">
+            <p>Psg ao trình vô địch c1 2025-2026</p>
+        </div>
+        <div class="anh" onclick="chieuVideo(4)">
+            <img src="../Picture/anh34.png" alt="">
+            <p>Messi và barsa vô định c1 mùa 2014-2015</p>
+        </div>
+    </div>
+    <script>
+        var danhsachVideo = [
+            {
+                id: 1,
+                ten: "Messi vô địch woldcub và làm GOAT",
+                duongDanAnh: "../Picture/anh31.png",
+                duongDanYT: "https://www.youtube.com/embed/x8pvC2U8Edo?si=IfxuA53UD0Pkhklv"
+            },
+            {
+                id: 2,
+                ten: "Barsa và Messi vô địch c1",
+                duongDanAnh: "../Picture/anh32.png",
+                duongDanYT: "https://www.youtube.com/embed/z4zHvym_9RY?si=7OzqSm6CBAUzsds9"
+            },
+            {
+                id: 3,
+                ten: "Psg ao trình vô địch c1 2025-2026",
+                duongDanAnh: "../Picture/anh33.png",
+                duongDanYT: "https://www.youtube.com/embed/0nmvknTWE2U?si=8lN1UICfvkVLf8LD"
+            },
+            {
+                id: 4,
+                ten: "Messi và barsa vô định c1 mùa 2014-2015",
+                duongDanAnh: "../Picture/anh34.png",
+                duongDanYT: "https://www.youtube.com/embed/sxqYIzvRjps?si=tnkRQkuUUVS2p_hF"
+            },
+        ];
+
+        function chieuVideo(id){
+            for (let i = 0; i< danhsachVideo.length; i++){
+                if(danhsachVideo[i].id == id){
+                    document.getElementsByClassName("ten")[0].innerHTML = danhsachVideo[i].ten;
+                    document.getElementsByTagName("iframe")[0].src = danhsachVideo[i].duongDanYT;
+                }
+            }
+
+        }
+
+    </script>
+</body>
+</html>

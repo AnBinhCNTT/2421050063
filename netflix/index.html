@@ -46,35 +46,38 @@
       .dang-chon{
         background-color:#4e4b52;
       }
-      .banner{
-        background-color:aliceblue;
-        width: 100%;
-        height: 60vh;
-        margin: 20px auto;
-        boder-radius: bolder;
-      }
-      .banner-anh{
-        width: 100%;
-        boder-radius: 20px;
-        height: 500px;
-        
-    }
-    .danh-sach-the-loai{
-        width: 95%;
-        height:20vh;
-        margin: 20px auto;
-    }
-   .phim{
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
+.banner {
+    width: 95%;             
+    height: 480px;            
+    margin: 20px auto;        
+    border-radius: 16px;     
+    overflow: hidden;        
 }
-
-.phim-poster{
-    width: 24%;
-    height: 15vh;
-    border-radius: 15px;
-    background-color: aliceblue;
+.banner-anh {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    
+    border: none;
+}
+.danh-sach-the-loai{
+    width: 95%;
+    height:auto;
+    margin: 20px auto;
+    }
+.phim {
+    display: flex;
+    justify-content: flex-start; 
+    gap: 10px;                
+    align-items: center;
+    width: 100%;
+}
+.phim-poster {
+    flex: 1;                                     
+    height: 150px;              
+    border-radius: 6px;       
+    object-fit: cover;          
+    display: block;
+    cursor: pointer;
 }
 .danh-sach-nhan-vat{
     display: flex;
@@ -119,7 +122,6 @@
         <iframe class="banner-anh" src="https://www.youtube.com/embed/8IemgUhk0SI?si=uzyDuYtzvTY35jpX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
         </iframe>
     </div>
-</div>
     <div class="danh-sach-the-loai">
         <div class="the-loai">
             <div class="ten-the-loai">
@@ -127,8 +129,11 @@
             </div>
             <div class="danh-sach-phim">
                 <div class="phim">
-                    <img src="../Picture/anh15.png" class="phim-poster"></img>
-                    <img src="../Picture/anh16.png" class="phim-poster"></img>
+                    <!-- Bấm vào ảnh 15: Gọi phim id = 1 -->
+                    <img onclick="Phim(1)" src="../Picture/anh15.png" class="phim-poster" alt="Phim 1">
+
+                        <!-- Bấm vào ảnh 16: Gọi phim id = 2 -->
+                    <img onclick="Phim(2)" src="../Picture/anh16.png" class="phim-poster" alt="Phim 2">
                     <img src="../Picture/anh17.png" class="phim-poster"></img>
                     <img src="../Picture/anh19.png" class="phim-poster"></img>
                     <img src="../Picture/anh20.png" class="phim-poster"></img>
@@ -183,13 +188,41 @@
 </div>
 </div>
 <script>
-    function xemTrailer(){
-        //ẩn banner đi
-        document.getElementsByClassName("banner")[0].style ="display:none";
-        //hiểm thị trailer lên
-        document.getElementsByClassName("banner")[1].style ="display:flex";
-    }
-</script>
-</main>
+        // Mảng lưu trữ thông tin của 2 phim
+        var danhSachPhim = [
+            {
+                id: 1,
+                ten: "Cảnh sát trưởng Labrado",
+                thoiLuong: 20,
+                trailer: "https://www.youtube.com/embed/0rigHDn68qQ?si=jBoybNdyhE9eThQM"
+            },
+            {
+                id: 2,
+                ten: "Zootopia",
+                thoiLuong: 15,
+                trailer: "https://www.youtube.com/embed/0rigHDn68qQ?si=jBoybNdyhE9eThQM"
+            }
+        ];
+
+        // Bấm vào ảnh banner thì hiện video mặc định của banner
+        function xemTrailer() {
+            document.getElementsByClassName("banner")[0].style.display = "none";
+            document.getElementsByClassName("banner")[1].style.display = "block";
+        }
+        // Bấm vào ảnh phim (theo id) để đổi video trailer và chạy lên banner
+        function Phim(id) {
+            var bannerAnh = document.getElementsByClassName("banner")[0];
+            var bannerTrailer = document.getElementsByClassName("banner")[1];
+            var iframe = bannerTrailer.getElementsByTagName("iframe")[0];
+
+            for (var i = 0; i < danhSachPhim.length; i++) {
+                if (danhSachPhim[i].id == id) {
+                    iframe.src = danhSachPhim[i].trailer;
+                    bannerAnh.style.display = "none";
+                    bannerTrailer.style.display = "block";
+                }
+            }
+        }
+ </script>
 </body>
 </html>
